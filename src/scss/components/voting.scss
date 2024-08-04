@@ -1,0 +1,25 @@
+@import '../mixin';
+@import '../variables';
+
+.voting {
+    &__field {
+        display: flex;
+        flex-direction: column;
+
+        margin-bottom: rem(15px);
+
+        input {
+            @include primaryFont;
+            font-weight: 400;
+            font-size: rem(14px);
+            padding: rem(11px) rem(12px);
+            width: rem(222px);
+            height: rem(42px);
+        }
+    }
+    .p-sortable-column, .p-datatable-emptymessage, .p-datatable .p-datatable-tbody > tr > td {
+        @include primaryFont;
+        font-weight: 400;
+        font-size: rem(14px);
+    }
+}

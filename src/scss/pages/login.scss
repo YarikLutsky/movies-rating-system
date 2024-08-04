@@ -1,0 +1,83 @@
+@import '../mixin';
+@import '../variables';
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    &__title-wrapper {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: rem(10px);
+    }
+
+    &__title {
+        @include primaryFont;
+        font-weight: 600;
+        font-size: rem(24px);
+        color: $color-blue-dark-1;
+    }
+
+    &__card {
+        padding: rem(30px) rem(30px);
+        background-color: $color-white;
+        border-radius: 3px;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+
+        &:not(:last-child) {
+            margin-bottom: rem(30px);
+        }
+
+        input {
+            @include primaryFont;
+            font-weight: 400;
+            font-size: rem(14px);
+            padding: rem(11px) rem(12px);
+            width: rem(222px);
+            height: rem(42px);
+        }
+
+        label {
+            @include primaryFont;
+            font-weight: 400;
+            font-size: rem(14px);
+            color: $color-blue-dark-1;
+            margin-bottom: rem(5px);
+        }
+    }
+
+    &__button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        @include primaryFont;
+        font-weight: 700;
+        font-size: rem(14px);
+        border: none;
+        border-radius: rem(10px);
+        padding: rem(13px) rem(15px);
+        box-shadow: 0px rem(6px) rem(14px) rgba(4, 85, 97, 0.15);
+        color: $color-white;
+        margin-top: rem(20px);
+    }
+
+    &__message {
+        @include primaryFont;
+        font-weight: 400;
+        font-size: rem(14px);
+        color: $color-alert;
+    }
+}

@@ -1,0 +1,44 @@
+@import '../mixin';
+@import '../variables';
+
+.header {
+    @include primaryFont;
+    font-weight: 600;
+    font-size: rem(16px);
+    color: $color-white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $color-blue-light-3;
+    height: 100%;
+    width: 100%;
+    padding: rem(10px) rem(30px);
+
+    &__end {
+        display: flex;
+        align-items: center;
+    }
+
+    &__date {
+        padding: 0 rem(8px);
+    }
+
+    &__connect-icon-wrapper {
+        display: flex;
+        align-items: center;
+        position: relative;
+        top: -1px;
+    }
+
+    &__connect-icon {
+        font-size: rem(20px);
+
+        &--on {
+            color: $color-green;
+        }
+
+        &--off {
+            color: $color-alert;
+        }
+    }
+}

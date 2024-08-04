@@ -1,0 +1,52 @@
+// MEDIA QUERY MANAGER
+/*
+0 - 600px: Phone
+600 - 900px: Tablet portrait
+900 - 1200px: Tablet landsacape
+1200 - 1800px: Normal styles
+1800 - bigger: Big desktop
+
+$breakpoint argument choices:
+- Phone
+- tab-port
+- tab-land
+- big-desktop
+*/
+
+// 1em = 16px
+
+@use "sass:math";
+
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == small-phone {
+    @media only screen and (max-width: 30em) { @content };
+  }
+  @if $breakpoint == phone {
+      @media only screen and (max-width: 37.5em) { @content };
+  }
+  @if $breakpoint == tab-port {
+      @media only screen and (max-width: 56.25em) { @content };
+  }
+  @if $breakpoint == tab-land {
+      @media only screen and (max-width: 75em) { @content };
+  }
+  @if $breakpoint == big-desktop {
+      @media only screen and (min-width: 112.5em) { @content };
+  }
+}
+
+$html-font-size: 10px;
+
+@function stripUnit($value) {
+  @return math.div($value, $value * 0 + 1);
+}
+
+@function rem($pxValue) {
+  @return #{math.div(stripUnit($pxValue), stripUnit($html-font-size))}rem;
+}
+
+@mixin primaryFont {
+  font-family: "Lato";
+  font-style: normal;
+}

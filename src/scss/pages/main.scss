@@ -1,0 +1,16 @@
+@import '../mixin';
+
+.main-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &__top {
+        flex: 0 0 rem(60px);
+        background-color: red;
+    }
+
+    &__bottom {
+        padding: rem(10px) rem(20px);
+    }
+}

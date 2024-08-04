@@ -1,0 +1,53 @@
+@import '_base.scss';
+
+.container {
+  max-width: 120rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background-color: $color-gray-light-2;
+  height: 100%;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  @include primaryFont;
+  font-weight: 700;
+  font-size: rem(14px);
+  border: none;
+  border-radius: rem(10px);
+  padding: rem(20px) rem(30px);
+  box-shadow: 0px rem(6px) rem(14px) rgba(4, 85, 97, 0.15);
+  color: $color-white;
+  cursor: pointer;
+  background-color: $color-blue-light-1;
+
+  &__disabled {
+    transform: translateY(0) !important;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+    opacity: 0.3;
+    cursor: not-allowed !important;
+  }
+
+  &.p-button:enabled:hover {
+    background-color: $color-blue-light-1;
+    box-shadow: 0 6px 14px rgb(4 83 94 / 32%);
+  }
+  
+  &.p-button:not(button):not(a):not(.p-disabled):hover {
+    background-color: $color-blue-light-1;
+    box-shadow: 0 6px 14px rgb(4 83 94 / 32%);
+  }
+}
+
+
